@@ -1,0 +1,21 @@
+<h1>List Photo</h1>
+<table>
+  <tr>
+    <th> Id</th>
+    <th> Title</th>
+    <th> Url</th>
+    <th> Thumbnail Url</th>
+    <th> Edit</th>
+    <th> Delee </th>
+  </tr>
+  <tr *ngFor="let photo of photos">
+
+    <td> {{ photo.id }}</td>
+    <td> {{ photo.title }}</td>
+    <td> {{ photo.url }}</td>
+    <td> {{ photo.thumbnailUrl }}</td>
+    <td> <a [routerLink]="['/photos/edit',photo.id]">Edit</a></td>
+    <td> <a [routerLink]="['/photos/delete',photo.id]">Delete</a></td>
+  </tr>
+
+</table>

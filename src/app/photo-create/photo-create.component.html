@@ -1,0 +1,28 @@
+<div class="text-center">
+  <h2>Add Photo</h2>
+</div>
+<div *ngIf="messageSuccess" class="alert alert-success">
+  <p>{{messageSuccess}}</p>
+</div>
+
+<div *ngIf="messageError" class="alert alert-danger">
+  <p>{{messageError}}</p>
+</div>
+
+<form #photoForm="ngForm" (ngSubmit)="add(photoForm.value)">
+  <label class="col">
+    Title:
+    <input type="text" name="title" ngModel class="form-control">
+  </label>
+  <label class="col">
+    Url:
+    <input type="text" name="url" ngModel class="form-control">
+  </label>
+  <label class="col">
+    Thumbnail Url:
+    <input type="text" name="thumbnailUrl" ngModel class="form-control">
+  </label>
+  <div class="col">
+    <button class="btn btn-info" type="submit">Submit</button>
+  </div>
+</form>

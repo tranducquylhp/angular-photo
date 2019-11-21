@@ -1,0 +1,32 @@
+<div class="text-center">
+  <h2>Chỉnh sửa thông tin khách hàng</h2>
+</div>
+
+<div *ngIf="messageSuccess" class="alert alert-success">
+  <p>{{messageSuccess}}</p>
+</div>
+
+<div *ngIf="messageError" class="alert alert-danger">
+  <p>{{messageError}}</p>
+</div>
+
+<form #photoForm="ngForm" (ngSubmit)="save(photoForm.value)">
+  <label class="col">
+    <input type="hidden" [(ngModel)]="photo.id" name="id" ngModel class="form-control"/>
+  </label>
+  <label class="col">
+    Title:
+    <input type="text" [(ngModel)]="photo.title" name="name" ngModel class="form-control">
+  </label>
+  <label class="col">
+    Url:
+    <input type="text" [(ngModel)]="photo.url" name="address" ngModel class="form-control">
+  </label>
+  <label class="col">
+    Thumbnail Url:
+    <input type="text" [(ngModel)]="photo.thumbnailUrl" name="phoneNumber" ngModel class="form-control">
+  </label>
+  <div class="col">
+    <button class="btn btn-info" type="submit">Submit</button>
+  </div>
+</form>
